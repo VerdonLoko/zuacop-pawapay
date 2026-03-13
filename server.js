@@ -21,7 +21,10 @@ app.get("/pawapay/create-session", async (req, res) => {
     reason: "Test paie ZuaCop",
     metadata: [
       {orderId: "ORD-123456789"},
-      {customerId: "ARTAXUS"}
+      {
+        customerId: "ARTAXUS",
+      isPII: true
+      }
     ]
   };
 
