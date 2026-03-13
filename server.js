@@ -8,16 +8,21 @@ const app = express();
 app.get("/pawapay/create-session", async (req, res) => {
   // Montant et devise fixés pour l'exemple Congo-Brazzaville
   const payload = {
-    depositId: "d9f7a31b-4f7e-4d43-9831-294c77c68a47", // identifiant unique
-    amount: "1500",                   // montant exemple
-    currency: "XAF",                  // Franc CFA (Congo-Brazzaville)
+    depositId: uuidv4(), // identifiant unique
     returnUrl: "https://zuacop.com/pawapay/callback", // page de retour après paiement
-    country: "COG",                     // code ISO du Congo-Brazzaville
-    customer: {
-      phoneNumber: "242053456789"      // numéro test sandbox
+    customerMessage: "Paiement Zuacop",
+    amountDetails: {
+    amount: "1500",
+    currency: "XAF"
     },
-
-    statementDescription: "Test paie ZuaCop"
+    phoneNumber: "242053456789", // numéro test sandbox
+    language:"FR",
+    country: "COG",                     // code ISO du Congo-Brazzaville
+    reason: "Test paie ZuaCop",
+    metadata: [
+      {orderId: "ORD-123456789},
+      {customerId: "ARTAXUS"}
+    ]
   };
 
   try {
