@@ -15,7 +15,7 @@ app.get("/pawapay/create-session", async (req, res) => {
   };
 
   try {
-    const response = await fetch("https://api.sandbox.pawapay.io/v1/payment_pages", {
+    const response = await fetch("https://api.sandbox.pawapay.io/v1/widget/sessions", {
       method: "POST",
       headers: {
         "Authorization": `Bearer ${process.env.PAWAPAY_KEY}`, // clé API stockée dans Render
