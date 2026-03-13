@@ -8,7 +8,7 @@ const app = express();
 app.get("/pawapay/create-session", async (req, res) => {
   // Montant et devise fixés pour l'exemple Congo-Brazzaville
   const payload = {
-    depositId: uuidv4(), // identifiant unique
+    depositId: "e08d6318-d9d8-47ef-939b-906d90df6d7c", // identifiant unique
     amount: "1500",                   // montant exemple
     currency: "XAF",                  // Franc CFA (Congo-Brazzaville)
     returnUrl: "https://zuacop.com/pawapay/callback", // page de retour après paiement
