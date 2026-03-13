@@ -1,5 +1,6 @@
 const express = require("express");
 const fetch = require("node-fetch");
+const { v4: uuidv4 } = require("uuid");
 
 const app = express();
 
@@ -7,11 +8,16 @@ const app = express();
 app.get("/pawapay/create-session", async (req, res) => {
   // Montant et devise fixés pour l'exemple Congo-Brazzaville
   const payload = {
-    depositId: Date.now().toString(), // identifiant unique
+    depositId: uuidv4(), // identifiant unique
     amount: "1500",                   // montant exemple
     currency: "XAF",                  // Franc CFA (Congo-Brazzaville)
     returnUrl: "https://zuacop.com/pawapay/callback", // page de retour après paiement
-    statementDescription: "Commande Zuacop"
+    country: "CG",                     // code ISO du Congo-Brazzaville
+    customer: {
+      phoneNumber: "242069549670"      // numéro test sandbox
+    },
+
+    statementDescription: "Test paie ZuaCop"
   };
 
   try {
