@@ -20,7 +20,7 @@ app.get("/pawapay/create-session", async (req, res) => {
     country: "COG",                     // code ISO du Congo-Brazzaville
     reason: "Test paie ZuaCop",
     metadata: [
-      {orderId: "ORD-123456789},
+      {orderId: "ORD-123456789"},
       {customerId: "ARTAXUS"}
     ]
   };
