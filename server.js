@@ -12,7 +12,7 @@ app.get("/pawapay/create-session", async (req, res) => {
     amount: "1500",                   // montant exemple
     currency: "XAF",                  // Franc CFA (Congo-Brazzaville)
     returnUrl: "https://zuacop.com/pawapay/callback", // page de retour après paiement
-    country: "CG",                     // code ISO du Congo-Brazzaville
+    country: "COG",                     // code ISO du Congo-Brazzaville
     customer: {
       phoneNumber: "242069549670"      // numéro test sandbox
     },
